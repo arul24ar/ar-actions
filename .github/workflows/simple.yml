@@ -11,5 +11,5 @@ jobs:
       - name: multi command
         run: |
           node -v
-          npm -ve
+          npm -v
           date
