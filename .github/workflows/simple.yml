@@ -1,0 +1,15 @@
+name : my first wf
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "hello buddy"
+      - name: multi command
+        run: |
+          node -v
+          npm -ve
+          date
