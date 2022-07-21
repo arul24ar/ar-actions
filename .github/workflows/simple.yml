@@ -1,6 +1,12 @@
 name : my first wf
 
-on: [push]
+on: 
+ push:
+ pull_request: 
+   types: [closed, assigned, opened, reopended]
+  schedule:
+    - cron: " * * * * *"
+
 
 jobs:
   run-shell-command:
