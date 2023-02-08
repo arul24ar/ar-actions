@@ -1,4 +1,5 @@
 name: actions workflow
+run-name: "udemy-course: ${{ github.ref_name }}"
 
 on: [push]
 

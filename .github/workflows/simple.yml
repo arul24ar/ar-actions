@@ -1,5 +1,5 @@
 name : my first wf
-
+run-name: "udemy-course: ${{ github.ref_name }}"
 on: 
  push:
  pull_request: 
