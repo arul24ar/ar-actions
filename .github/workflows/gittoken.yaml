@@ -1,4 +1,4 @@
-name: env-workflow
+name: gittoken-workflow
 run-name: "udemy-course: ${{ github.ref_name }}"
 on: [push]
 env: 
