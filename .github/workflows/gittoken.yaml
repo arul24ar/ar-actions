@@ -1,0 +1,28 @@
+name: env-workflow
+run-name: "udemy-course: ${{ github.ref_name }}"
+on: [push]
+env: 
+  WF_ENV: available for all jobs
+
+jobs:
+  random-number:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: push a random file
+        run: |
+          pwd
+          ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "ar-bot@bot.com"
+          git config --global user.email "ar-bot"
+          git fetch
+          git checkout master 
+          git branch --set-upstream-to=origin/master
+          git pull
+          ls -a
+          echo $RANDOM >> random.txt
+          ls -a
+          git add -A 
+          git commit -m "random file commit"
+          git push
