@@ -1,0 +1,15 @@
+name: decrypt-workflow
+run-name: "udemy-course: ${{ github.ref_name }}"
+
+on: [push]
+jobs:
+  decrypt-actions:
+    runs-on: ubuntu-lates
+    steps:
+      - uses: actions.checkout@v1
+      - name: decrypt file 
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$secrets" --output $HOME/secret.json sec.json.gpg
+        env: 
+          secrets: $${{ secrets.PASSPHRASE }}           
+      - name: print out the file connent # ONLY FOR TEST
+        run: cat $HOME/secret.json

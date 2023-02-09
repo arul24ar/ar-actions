@@ -1,35 +1,35 @@
-name : my first wf
-run-name: "udemy-course: ${{ github.ref_name }}"
-on: 
- push:
- pull_request: 
-   types: [closed, assigned, opened, reopended]
-  schedule:
-    - cron: " * * * * *"
+# name : my first wf
+# run-name: "udemy-course: ${{ github.ref_name }}"
+# on: 
+#  push:
+#  pull_request: 
+#    types: [closed, assigned, opened, reopended]
+#   schedule:
+#     - cron: " * * * * *"
 
 
-jobs:
-  run-shell-command:
-    runs-on: ubuntu-latest
-    steps:
-      - name: echo a string
-        run: echo "hello buddy"
-      - name: multi command
-        run: |
-          node -v
-          npm -v
-          date
-      - name: run python command
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  run-windows-command:
-    needs: [run-shell-command]
-    runs-on: windows-latest
-    steps:
-      - name: directory powershell
-        run: Get-Location
-      - name: dir in bash
-        run: pwd
-        shell: bash
+# jobs:
+#   run-shell-command:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: echo a string
+#         run: echo "hello buddy"
+#       - name: multi command
+#         run: |
+#           node -v
+#           npm -v
+#           date
+#       - name: run python command
+#         run: |
+#           import platform
+#           print(platform.processor())
+#         shell: python
+#   run-windows-command:
+#     needs: [run-shell-command]
+#     runs-on: windows-latest
+#     steps:
+#       - name: directory powershell
+#         run: Get-Location
+#       - name: dir in bash
+#         run: pwd
+#         shell: bash
