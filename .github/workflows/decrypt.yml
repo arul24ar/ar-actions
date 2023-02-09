@@ -6,7 +6,7 @@ jobs:
   decrypt-actions:
     runs-on: ubuntu-lates
     steps:
-      - uses: actions.checkout@v1
+      - uses: actions/checkout@v1
       - name: decrypt file 
         run: gpg --quiet --batch --yes --decrypt --passphrase="$secrets" --output $HOME/secret.json sec.json.gpg
         env: 
