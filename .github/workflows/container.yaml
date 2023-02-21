@@ -1,4 +1,5 @@
 name: container
+run-name: "udemy-course: ${{ github.ref_name }}"
 on: [push]
 
 jobs:

@@ -1,46 +1,46 @@
-jobs:
- node-version:
-   strategy:
-     matrix:
-       os: [macos-latest,ubuntu-latest,windows-latest]
-       node-version: [6,8,10]
-  runs-on: ${{ matrix.os }}
-  steps:
-  - name: log node version 
-    runs: node -v 
-  - uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node-version }}
-  - name: check node version
-    runs: node-v 
+# jobs:
+#  node-version:
+#    strategy:
+#      matrix:
+#        os: [macos-latest,ubuntu-latest,windows-latest]
+#        node-version: [6,8,10]
+#   runs-on: ${{ matrix.os }}
+#   steps:
+#   - name: log node version 
+#     runs: node -v 
+#   - uses: actions/setup-node@v1
+#     with:
+#       node-version: ${{ matrix.node-version }}
+#   - name: check node version
+#     runs: node-v 
 
-##########
+# ##########
 
 
-jobs:
- node-version:
-   strategy:
-     matrix:
-       os: [macos-latest,ubuntu-latest,windows-latest]
-       node-version: [6,8,10]
-       include:
-       - os: ubuntu-latest
-         node_version: 8
-         is_ubuntu_8: "true"
-       exclude: 
-       - os: macos-latest
-         node_version: 6
-       - os: ubuntu-latest
-         node-version: 8
-  runs-on: ${{ matrix.os }}
-  env:
-   IS_UBUNTU: ${{ matrix.is_ubuntu_8 }}
-  steps:
-  - name: log node version 
-    runs: node -v 
-  - uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node-version }}
-  - name: check node version
-    runs: node-v 
+# jobs:
+#  node-version:
+#    strategy:
+#      matrix:
+#        os: [macos-latest,ubuntu-latest,windows-latest]
+#        node-version: [6,8,10]
+#        include:
+#        - os: ubuntu-latest
+#          node_version: 8
+#          is_ubuntu_8: "true"
+#        exclude: 
+#        - os: macos-latest
+#          node_version: 6
+#        - os: ubuntu-latest
+#          node-version: 8
+#   runs-on: ${{ matrix.os }}
+#   env:
+#    IS_UBUNTU: ${{ matrix.is_ubuntu_8 }}
+#   steps:
+#   - name: log node version 
+#     runs: node -v 
+#   - uses: actions/setup-node@v1
+#     with:
+#       node-version: ${{ matrix.node-version }}
+#   - name: check node version
+#     runs: node-v 
 
