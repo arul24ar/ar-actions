@@ -1,5 +1,6 @@
 name: container
 run-name: "udemy-course: ${{ github.ref_name }}"
+
 on: [push]
 
 jobs:
@@ -9,6 +10,6 @@ jobs:
       image: node:13.5.0-alpine3.10
     steps:
     - name: log node version
-      runs: |
+      run: |
         node -v
         cat /etc/os-release
